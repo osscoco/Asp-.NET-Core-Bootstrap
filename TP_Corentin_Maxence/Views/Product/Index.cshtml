@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TP_Corentin_Maxence.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Produit</h1>
+
+<p style="text-align:end; margin-top:20px; margin-bottom:20px; color:black">
+    <i class="fas fa-edit"></i>
+    <a asp-action="Create" asp-controller="Product">Créer un nouveau produit</a>
+</p>
+
+
+<p>
+    Rechercher par : <a asp-action="SearchId" asp-controller="Product">    Identifiant    </a> | <a asp-action="SearchName" asp-controller="Product">    Nom    </a> |
+    <a asp-action="SearchPrix" asp-controller="Product">    Prix    </a>
+</p>
+
+<table class="table" style="margin-bottom:400px;margin-top:50px">
+    <thead>
+        <tr>
+            <th>
+               Identifiant
+            </th>
+            <th>
+                Nom
+            </th>
+            <th>
+                Descritpion
+            </th>
+            <th>
+                Prix (€)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prix) €
+            </td>
+            <td>
+                <a href="@Url.Action("Edit","Product", new {@id=item.id })">Modifier</a> |
+                <a href="@Url.Action("Delete","Product", new {@id=item.id })">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

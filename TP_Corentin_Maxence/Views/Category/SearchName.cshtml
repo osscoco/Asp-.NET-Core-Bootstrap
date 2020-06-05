@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TP_Corentin_Maxence.Models.Category>
+
+@{
+    ViewData["Title"] = "SearchName";
+}
+
+<h1>Rechercher par Nom</h1>
+
+<p style="margin-top:50px">
+    @using (Html.BeginForm("SearchName", "Category", FormMethod.Get))
+    {
+        <i class="fas fa-search"></i>
+        <input type="text" name="CategorySearchName" placeholder="Nom de catégorie"/>
+        <input type="submit" value="Search" name="submit" style="margin-right:100px" />
+        <a asp-action="Index" asp-controller="Category">Annuler</a>
+    }
+</p>
+
+<table class="table" style="margin-bottom:400px;margin-top:50px">
+    <thead>
+        <tr>
+            <th>
+                Identifiant
+            </th>
+            <th>
+                Nom
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

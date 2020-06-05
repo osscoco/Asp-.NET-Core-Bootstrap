@@ -1,0 +1,47 @@
+﻿@model TP_Corentin_Maxence.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+<body>
+    <h1>Créer un produit</h1>
+    <hr />
+    
+    <div class="row" style="margin-bottom:400px">
+    
+        <div class="col-md-4">
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="name" class="control-label">Nom</label>
+                    <input asp-for="name" class="form-control" placeholder="Nom de Produit" />
+                    <span asp-validation-for="name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="description" class="control-label">Description</label>
+                    <input asp-for="description" class="form-control" placeholder="Description du Produit"/>
+                    <span asp-validation-for="description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="prix" class="control-label">Prix</label>
+                    <input asp-for="prix" class="form-control" placeholder="Prix du Produit"/>
+                    <span asp-validation-for="prix" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" style="margin-top:50px">
+                    <input type="submit" value="Créer" class="btn btn-primary" style="margin-right:200px" />  <a  asp-action="Index" asp-controller="Product">Annuler</a>
+                </div>
+
+            </form>
+
+            
+        </div>
+    </div>
+
+</body>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

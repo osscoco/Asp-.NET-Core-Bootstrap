@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TP_Corentin_Maxence</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"
+            integrity="sha256-2JRzNxMJiS0aHOJjG+liqsEOuBb6++9cY4dSOyiijX4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="text-align:left;">TP_Corentin_Maxence</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div style="background-image: url(../lib/logo.jpg); background-repeat: no-repeat; text-align:center;">
+                &nbsp;
+                <br />
+                &nbsp;
+                <br />
+                &nbsp;
+                <br />
+            </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse text-center " style="padding-left:275px; text-align:center;">
+                    <ul class="navbar-nav flex-grow-1 ">
+                        <li class="nav-item" style="margin-left:50px;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><b>Accueil</b></a>
+                        </li>
+                        <li class="nav-item" style="margin-left:50px;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index"><b>Produit</b></a>
+                        </li>
+                        <li class="nav-item" style="margin-left:50px;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index"><b>Categorie</b></a>
+                        </li>
+                        <li class="nav-item" style="margin-left:50px;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index"><b>Contact</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    France
+                </div>
+
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="margin-top:100px; color:white; background-color:black;">
+        <div style="display:flex;justify-content:space-around ">
+            <div class="text-center" style="width:350px;padding-top:20px">
+                <div style="background-color:white;border-radius:100%;width:60px;margin-left:150px"><i class="fas fa-credit-card"></i></div>
+                <p style="font-size:20px">
+                    <b>PAIEMENT 100% SECURISE</b>
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    Nous avons choisi d'adhérer au programme de
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    sécurisation Paiement sécurisé par carte bancaire
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    assorti du protocole de paiement 3D SECURE
+                </p>
+            </div>
+            <div class="text-center" style="width:350px;padding-top:20px">
+                <div style="background-color:white;border-radius:100%;width:60px;margin-left:150px"><i class="fas fa-mobile-alt"></i></div>
+                <p style="font-size:20px">
+                    <b>SERVICE CLIENT</b>
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    Notre équipe de conseillers est basée en France
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    et répond à toute vos questions, sans interruption du
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    lundi au samedi de 8h à 20h par mail ou par
+                </p>
+                <p style="margin-top:-40px">
+                    téléphone au +33. 02 38 53 65 99
+                </p>
+            </div>
+            <div class="text-center" style="width:350px;padding-top:20px">
+                <div style="background-color:white;border-radius:100%;width:60px;margin-left:150px"><i class="fas fa-truck"></i></div>
+                <p style="font-size:20px">
+                    <b> RETOURS COLIS</b>
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    Si vous n'êtes pas satisfais, vous nous retournez
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    le ou les produits sous 15 jours et vous serez
+                </p>
+                <p style="margin-top:-45px;font-size:14px">
+                    intégralement remboursé sans avoir à vous justifier
+                </p>
+            </div>
+        </div>
+        <div class="container" style="border-top:1px solid gray;margin-bottom:20px;margin-top:10px"></div>
+        <div class="container" style=" display:flex; justify-content:space-between;margin-bottom:20px">
+            <div >
+                <div>© 2020 TP_Corentin_Maxence, Inc. Tous droits réservés</div>
+            </div>
+            <div class="text-center" style="display:flex">
+                <a href="https://www.instagram.com/maxence.fougere/" style="width:60px; margin-right:10px "> <div class="gray" style="background-color:white; border-radius:100px;"><i class="fab fa-instagram"></i></div></a>
+
+                <a href="https://scan.snapchat.com/snapcodes" style="width:60px;margin-right:10px "> <div class="gray" style="background-color:white; border-radius:100px;"><i class="fab fa-snapchat-square"></i></div></a>
+
+                <a href="https://www.facebook.com/profile.php?id=100005701247920" style="width:60px; "> <div class="gray" style="background-color:white; border-radius:100px;"><i class="fab fa-facebook-square"></i></div></a>
+            </div>
+
+        </div>
+      
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+<style>
+    li:hover{
+        border-bottom: 2px solid grey;
+    }
+    .gray{
+        text-decoration:none
+    }
+    .gray:hover{
+      background-color:gray;
+    }
+</style>

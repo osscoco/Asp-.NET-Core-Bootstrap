@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TP_Corentin_Maxence.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Categorie</h1>
+
+<p style="text-align:end; margin-top:20px; margin-bottom:20px; color:black">
+    <i class="fas fa-edit"></i>
+    <a asp-action="Create" asp-controller="Category">Créer une nouvelle catégorie</a>
+</p>
+    
+<p>
+    Rechercher par : <a asp-action="SearchId" asp-controller="Category">Identifiant</a> | <a asp-action="SearchName" asp-controller="Category">Nom</a>
+</p>
+
+    <table class="table" style="margin-bottom:400px; margin-top:50px">
+        <thead>
+            <tr>
+                <th>
+                    Identifiant
+                </th>
+                <th>
+                    Nom
+                </th>
+                <th>
+                    Description
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.description)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit","Category", new {@id=item.id })">Modifier</a> |
+                        <a href="@Url.Action("Delete","Category", new {@id=item.id })">Supprimer</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

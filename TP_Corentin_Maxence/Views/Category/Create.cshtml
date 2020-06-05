@@ -1,0 +1,33 @@
+﻿@model TP_Corentin_Maxence.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+    <body>
+        <h1>Créer une categorie</h1>
+        <hr />
+        <div class="row" style="margin-bottom:400px">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="name" class="control-label">Nom de la catégorie</label>
+                        <input asp-for="name" class="form-control" placeholder="Nom de catégorie"/>
+                        <span asp-validation-for="name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="description" class="control-label">Description</label>
+                        <input asp-for="description" class="form-control" placeholder="Description de catégorie"/>
+                        <span asp-validation-for="description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-top:50px">
+                        <input type="submit" value="Créer" class="btn btn-primary"style="margin-right:200px" />  <a  asp-action="Index" asp-controller="Category">Annuler</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,34 @@
+﻿@model TP_Corentin_Maxence.Models.Contact
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Formulaire de contact</h1>
+<hr />
+<div class="row" style="margin-top:50px;margin-bottom:400px">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                Mail
+                <input asp-for="fromcontact" class="form-control" placeholder="Envoyeur du mail"/>
+                <span asp-validation-for="fromcontact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Message
+                <textarea asp-for="corpcontact" class="form-control" rows="4" cols="15" placeholder="Corp du mail"></textarea>
+                <span asp-validation-for="corpcontact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input  asp-controller="Home" type="submit" value="Envoyer" class="btn btn-primary" style="margin-right:200px" />  <a asp-action="Index" asp-controller="Home">Annuler</a>
+            </div>
+            <h5>@ViewBag.message</h5>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
