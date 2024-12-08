@@ -30,7 +30,7 @@ namespace TP_Corentin_Maxence.Controllers
         public IActionResult Create(Category category)
         {
 
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=root;database=joueur;persistsecurityinfo=True"))
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=dbuser;pwd=123456;database=manageshoesfootdb;persistsecurityinfo=True"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("insert into category (name,description) VALUES (@name,@description)", conn);
@@ -47,7 +47,7 @@ namespace TP_Corentin_Maxence.Controllers
         {
             Category category = new Category();
             DataTable dataTable = new DataTable();
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=root;database=joueur;persistsecurityinfo=True"))
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=dbuser;pwd=123456;database=manageshoesfootdb;persistsecurityinfo=True"))
             {
                 conn.Open();
                 MySqlDataAdapter cmd = new MySqlDataAdapter("select * from category where id = @id", conn);
@@ -67,7 +67,7 @@ namespace TP_Corentin_Maxence.Controllers
         [HttpPost]
         public IActionResult Edit(Category category)
         {
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=root;database=joueur;persistsecurityinfo=True"))
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=dbuser;pwd=123456;database=manageshoesfootdb;persistsecurityinfo=True"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("update category set name = @name, description = @description where id = @id", conn);
@@ -82,7 +82,7 @@ namespace TP_Corentin_Maxence.Controllers
 
         public IActionResult Delete(int id)
         {
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=root;database=joueur;persistsecurityinfo=True"))
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=dbuser;pwd=123456;database=manageshoesfootdb;persistsecurityinfo=True"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("delete from category where id = @id", conn);

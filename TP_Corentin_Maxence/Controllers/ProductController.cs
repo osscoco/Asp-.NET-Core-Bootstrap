@@ -30,7 +30,7 @@ namespace TP_Corentin_Maxence.Controllers
         public IActionResult Create(Product product)
         {
 
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=root;database=joueur;persistsecurityinfo=True"))
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=dbuser;pwd=123456;database=manageshoesfootdb;persistsecurityinfo=True"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("insert into product (name,description,prix) VALUES (@name,@description,@prix)", conn);
@@ -48,7 +48,7 @@ namespace TP_Corentin_Maxence.Controllers
         {
             Product product = new Product();
             DataTable dataTable = new DataTable();
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=root;database=joueur;persistsecurityinfo=True"))
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=dbuser;pwd=123456;database=manageshoesfootdb;persistsecurityinfo=True"))
             {
                 conn.Open();
                 MySqlDataAdapter cmd = new MySqlDataAdapter("select * from product where id = @id", conn);
@@ -69,7 +69,7 @@ namespace TP_Corentin_Maxence.Controllers
         [HttpPost]
         public IActionResult Edit(Product product)
         {
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=root;database=joueur;persistsecurityinfo=True"))
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=dbuser;pwd=123456;database=manageshoesfootdb;persistsecurityinfo=True"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("update product set name = @name, description = @description, prix = @prix where id = @id", conn);
@@ -85,7 +85,7 @@ namespace TP_Corentin_Maxence.Controllers
 
         public IActionResult Delete(int id)
         {
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=root;database=joueur;persistsecurityinfo=True"))
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user id=dbuser;pwd=123456;database=manageshoesfootdb;persistsecurityinfo=True"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("delete from product where id = @id", conn);
